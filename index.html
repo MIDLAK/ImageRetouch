@@ -1,56 +1,68 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-      <meta charset="UTF-8">
-      <title>Фото</title>
-      <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css' 
+        <meta charset="UTF-8">
+        <title>Фото</title>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css' 
           rel='stylesheet'
           integrity='sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ' 
           crossorigin='anonymous'>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        </style>
     </head>
 
     <body>
-      <table>
-        <tr>
-          <td>
-            <div>
-              <p>Изображение</p>
-              <img id="img">
+    <div class="navbar navbar-fixed-top">
+      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm justify-content-center text-center ">
+                <figure class="figure">
+                    <img id="img">
+                    <figcaption class="figure-caption">
+                        <input id="input" class="form-control" type="file" />
+                    </figcaption>
+                </figure>
             </div>
-          </td>
 
-          <td>
-            <div class="card">
-              <canvas id="canvasHistogram" width="256" height="150"></canvas>
+            <div class="col-sm justify-content-center text-center">
+                <canvas id="canvasNew" height="16"></canvas>
             </div>
-          </td>
+        </div>
 
-          <td>
-            <canvas id="canvasNew" height="16"></canvas>
-          </td>
-        </tr>
+        <div class = "row justify-content-center ">
+            <div class="col-sm d-flex justify-content-center text-center">
+                <canvas width="256" height="150" id="canvasHistogram">Ваш браузер не поддерживает Canvas</canvas>
+            </div>
+        </div>
 
-        <tr>
-          <td>
-            <input id="input" type="file" />
-          </td>
+        <br>
 
-          <td>
-            <button id="negate">Негатив</button>
-            <button id="blackWhite">ЧБ</button>
+        <div class = "row justify-content-center ">
+            <div class="col align-self-centerl">
+                <button id="negate" class="btn btn-primary">Негатив</button>
+            </div>
+            <div class="col align-self-center">
+                <button id="blackWhite" class="btn btn-primary">ЧБ</button>
+            </div>
+        </div>
 
-            <p>Яркость</p>
-            <input id="rangeBrightness" type="range" min="-255" max="255" value="0">
-            <p class="valBrightness">0</p>
+        <div class="row">
+            <div class="col">
+                <label for="rangeBrightness" class="form-label">Яркость</label>
+                <input id="rangeBrightness" type="range" class="form-range" min="-255" max="255" value="0">
+                <p class="valBrightness">0</p>
+            </div>
 
-            <p>Контраст</p>
-            <input id="rangeContrast" type="range" min="-255" max="255" value="0">
-            <p class="valContrast">0</p>
-          </td>
-        </tr>
-
-      </table>
+            <div class="col">
+                <label for="rangeContrast" class="form-label">Контраст</label>
+                <input id="rangeContrast" type="range" class="form-range" min="-255" max="255" value="0">
+                <p class="valContrast">0</p>
+            </div>
+        </div>
+        </div>
+    </div>
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="main.js"></script>

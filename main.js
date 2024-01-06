@@ -139,12 +139,12 @@ function drawHistogramm(image) {
     let dx = canvas.width / 256;
     let dy = canvas.height / maxHist;
     context.lineWidth = dx;
-    context.fillStyle = '#fff';
+    context.fillStyle = '#000000'; //#fff
     context.fillRect(0, 0, canvas.width, canvas.height);
 
     for (let i = 0; i < 256; i++) {
         let x = i * dx;
-        context.strokeStyle = '#000000';
+        context.strokeStyle = '#ffffff'; //#000000
         context.beginPath();
         context.moveTo(x, canvas.height);
         context.lineTo(x, canvas.height - hist[i] * dy);
